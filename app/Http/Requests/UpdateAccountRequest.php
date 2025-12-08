@@ -3,18 +3,15 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Pest\Profanity\Validator;
 
-class StoreTransactionRequest extends FormRequest
+class UpdateAccountRequest extends FormRequest
 {
-    protected $redirect = '/teste';
-
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,18 +22,7 @@ class StoreTransactionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title" => "required|string|max:255",
-            'amount' => 'required|numeric|min:0.01',
-            'type' => 'required|in:income,expense',
+            //
         ];
     }
-
-    public function response()
-    {
-        return response()->json([
-            'errors' => $this->errors(),
-        ], 422);
-    }
-
-
 }
