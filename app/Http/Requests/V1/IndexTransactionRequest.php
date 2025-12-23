@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -27,7 +27,7 @@ class IndexTransactionRequest extends FormRequest
             'end_date' => 'nullable|sometimes|date|after_or_equal:start_date',
             'year' => 'nullable|sometimes|integer|min:1900|max:2100',
             'month' => 'nullable|sometimes|integer|min:1|max:12',
-            'search'=>'nullable|string|max:255',
+            'search' => 'nullable|string|max:255',
         ];
     }
 }
