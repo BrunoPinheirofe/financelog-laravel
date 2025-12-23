@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->decimal('amount', 15, 2);
             $table->enum('type', ['income', 'expense']);
             $table->boolean('paid')->default(false);
-
             $table->boolean('is_installment')->default(false); // É parcelado?
             $table->uuid('installment_group_id')->nullable()->index(); // O elo de ligação
             $table->integer('installment_number')->nullable(); // Ex: 1
